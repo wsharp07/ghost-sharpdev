@@ -1,0 +1,5 @@
+node_modules
+.vscode
+deploy
+assets/dist
+package-lock.json

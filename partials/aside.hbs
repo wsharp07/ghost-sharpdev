@@ -1,0 +1,17 @@
+{{#if @blog.cover_image}}
+<div class="lateral" style="background: url({{@blog.cover_image}}) center/cover no-repeat fixed">
+{{else}}
+<div class="lateral" >
+{{/if}}
+    <aside class="author">
+
+        <img class="profile-image" src="{{@blog.logo}}" alt="" />
+        <p class="name"><strong>{{@blog.title}}</strong></p>
+        <p class="about">{{@blog.description}}</p>
+        
+        {{ navigation }}
+
+        {{> social}}
+        
+    </aside>
+</div>

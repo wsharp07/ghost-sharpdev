@@ -1,0 +1,521 @@
+@import "normalize/import-now";
+// -----------------------------------------------------------------------------
+// Variables
+// -----------------------------------------------------------------------------
+
+$h-color: #2a373d; // Heading Colour
+$b-color: #222222; // Body Colour
+$s-color: #979797; // Secondary Colour
+$author-color: #fff; // Fonts
+$h-font: 'Roboto', sans-serif; // Heading Font
+$b-font: 'Noto Serif', serif; // Body Font
+$icon-font: 'fontello'; // Icon Font
+
+$light: 300;
+$normal: 400;
+$bold: 700;
+
+// -----------------------------------------------------------------------------
+// Mixin
+// -----------------------------------------------------------------------------
+@mixin image-2x($image, $width, $height) {
+	@media (min--moz-device-pixel-ratio: 1.3), 
+		(-o-min-device-pixel-ratio: 2.6/2), 
+		(-webkit-min-device-pixel-ratio: 1.3), 
+		(min-device-pixel-ratio: 1.3), 
+		(min-resolution: 1.3dppx) {
+        background-image: url($image);
+        background-size: $width $height;
+    }
+}
+
+// -----------------------------------------------------------------------------
+// Global Styles
+// -----------------------------------------------------------------------------
+body {
+    color: $b-color;
+    font-family: $b-font;
+    font-weight: $normal;
+    transition: all 0.3s ease;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $h-font;
+    font-weight: $light;
+}
+
+a {
+    text-decoration: none;
+    color: lighten($b-color, 50%);
+    transition: all 0.3s ease;
+    &:hover {
+        color: $b-color;
+    }
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+    color: $b-color;
+    &:hover {
+        color: lighten($b-color, 50%);
+    }
+}
+
+hr {
+    border: 0;
+    border-top: 1px #E4E4E4 solid;
+    margin: 40px 0;
+}
+
+.post ul li {
+    line-height: 28px;
+    font-size: 15px;
+}
+
+.container {
+    margin: 0 auto;
+}
+
+.author {
+    text-align: center;
+    margin-top: 50%;
+}
+
+.content {
+    width: 50%;
+    margin-top: 5%;
+    margin-right: 25%;
+    float: right;
+}
+
+// -----------------------------------------------------------------------------
+// Header
+// -----------------------------------------------------------------------------
+.site-header {
+    display: none;
+}
+
+.site-header h2 {
+    margin: 0;
+}
+
+.profile-image {
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    width: 118px;
+    height: 118px;
+}
+
+// -----------------------------------------------------------------------------
+// Articles
+// -----------------------------------------------------------------------------
+.post h2 {
+    margin-top: 0;
+}
+
+.post p {
+    line-height: 28px;
+}
+
+.post h2 a,
+.post-template h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.post-template h2,
+.post-template h3,
+.post-template h4,
+.post-template h5,
+.post-template h6 {
+    font-family: $h-font;
+    font-weight: $bold;
+}
+
+.post {
+    margin-bottom: 60px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid #ececec;
+}
+
+.post img {
+    max-width: 100%;
+    height: auto;
+}
+
+.post-info {
+    color: lighten($b-color, 50%);
+    font-family: $h-font;
+    font-weight: $light;
+    font-size: 16px;
+    margin-bottom: 40px;
+    line-height: 10px;
+}
+
+.share-buttons {
+    list-style: none;
+    padding: 0;
+}
+
+.share-buttons li {
+    display: inline;
+    font-family: $h-font;
+    font-weight: $light;
+    font-size: 13px;
+    color: $s-color;
+    margin-right: 4px;
+}
+
+.share-buttons li a {
+    font-size: 15px;
+}
+
+.comments {
+    margin-bottom: 60px;
+}
+
+.tags {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+}
+
+.tag-title {
+    font-family: $h-font;
+    font-weight: $light;
+    border-bottom: 1px solid #ececec;
+    margin-bottom: 40px;
+}
+
+.tag-title h1 {
+    font-size: 28px;
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+.tag-title p {
+    color: $s-color;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+// -----------------------------------------------------------------------------
+// Pagination
+// -----------------------------------------------------------------------------
+.pagination {
+    position: relative;
+    height: 35px;
+    width: 100%;
+    margin-bottom: 60px;
+}
+
+.btn {
+    border: solid 1px rgb( 236, 236, 236);
+    background-color: #FFF;
+    width: 100px;
+    height: 35px;
+    display: block;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    text-align: center;
+    font-family: $h-font;
+    font-weight: $light;
+    line-height: 35px;
+    font-size: 13px;
+    color: #000;
+    &:hover {
+        background-color: $h-color;
+        border-color: $h-color;
+        color: #FFF;
+    }
+}
+
+.post .btn {
+    width: 140px;
+}
+
+.btn.btn-download {
+    background-color: $h-color;
+    border-color: $h-color;
+    color: #FFF;
+    width: 200px;
+    &:hover {
+        background-color: lighten($h-color, 15%);
+        border-color: $h-color;
+        color: #FFF;
+    }
+}
+
+.newer {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.older {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.counter {
+    text-align: center;
+    line-height: 35px;
+    font-size: 13px;
+    font-family: $h-font;
+    font-weight: $light;
+    color: $s-color;
+}
+
+// -----------------------------------------------------------------------------
+// Sidebar
+// -----------------------------------------------------------------------------
+.author {
+    font-family: $h-font;
+    font-weight: $light;
+}
+
+.author p {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+}
+
+.author p.name {
+    font-size: 22px;
+    margin: 10px 0;
+    color: $author-color;
+}
+
+.author p.address {
+    color: $author-color;
+}
+
+.author p.about {
+    font-family: $b-font;
+    width: 55%;
+    font-size: 16px;
+    margin: 10px auto;
+    color: $s-color;
+}
+
+.author p.link {
+    margin-bottom: 10px;
+    color: $author-color;
+    margin-top: 10px;
+    font-size: 22px;
+    font-family: $h-font;
+    font-weight: 300;
+}
+
+.author ul.social {
+    list-style: none;
+    display: inline;
+    padding: 0;
+}
+
+.author ul.social li {
+    display: inline;
+}
+
+.author ul.social li a {
+    padding: 5px;
+    font-size: 20px;
+}
+
+// -----------------------------------------------------------------------------
+// Footer
+// -----------------------------------------------------------------------------
+.main-footer {
+    background-color: #f3f3f3;
+    text-align: center;
+    font-family: $h-font;
+    font-weight: $light;
+    color: lighten($b-color, 50%);
+}
+
+.main-footer .container {
+    padding: 30px 0;
+}
+
+.main-footer a {
+    color: lighten($b-color, 50%);
+    &:hover {
+        color: $b-color;
+    }
+}
+
+.main-footer p {
+    font-size: 11px;
+}
+
+// -----------------------------------------------------------------------------
+// Post page
+// -----------------------------------------------------------------------------
+body.post-template>.site-header {
+    height: 250px;
+    transition: all 0.3s ease;
+}
+
+// -----------------------------------------------------------------------------
+// Responsive Styles
+// -----------------------------------------------------------------------------
+@media only screen and (min-width: 1200px) and (max-width: 1799px) {
+    .container {
+        width: 100%;
+    }
+    .content {
+        width: 80%;
+        margin-right: 10%;
+        margin-top: 5%
+    }
+}
+
+@media only screen and (min-width: 720px) and (max-width: 1199px) {
+    .container {
+        width: 100%;
+    }
+    .content {
+        width: 80%;
+        margin-right: 15%;
+        margin-top: 5%
+    }
+}
+
+@media only screen and (max-width: 719px) {
+    .container {
+        width: 90%;
+        padding-top: 25px;
+    }
+    .author,
+    .content {
+        width: 100%;
+        margin: 0;
+    }
+    .author {
+        padding-top: 60px;
+    }
+    .site-header,
+    body.post-template>.site-header {
+        height: 180px;
+        transition: all 0.3s ease;
+    }
+    .site-header h2 .logo {
+        //background: url(../img/rriegger-logo.png) no-repeat 0 0;
+        width: 90px;
+        height: 74px;
+        margin: -45px 0 0 -37px;
+        background-size: 90px 74px;
+    }
+    .lateral {
+        position: inherit !important;
+        width: 100% !important;
+        height: 450px !important;
+    }
+    .home {
+        width: 100% !important;
+    }
+    .post h2 a {
+        font-size: 30px !important;
+    }
+    .post-info {
+        font-size: 15px !important;
+    }
+}
+
+// -----------------------------------------------------------------------------
+// Helper classes
+// -----------------------------------------------------------------------------
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    /* 1 */
+    display: table;
+    /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.lateral {
+    height: 100%;
+    position: fixed;
+    width: 30%;
+    background: #2e2e2e;
+}
+
+.home {
+    width: 70%;
+    float: right;
+}
+
+ul>li>a {
+    color: #c3c3c3;
+}
+
+ul>li>a:hover {
+    color: white;
+}
+
+.link>a:hover {
+    color: white;
+}
+
+ul.nav {
+    padding: 0;
+    list-style: none;
+}
+
+.nav li {
+    display: inline;
+}
+
+.nav li+li:before {
+    content: " | ";
+    color: #c3c3c3;
+}
+
+.label {
+    display: inline;
+    padding: .2em .6em .3em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+    margin-left: 5px;
+}
+
+.label-primary {
+    background-color: #337ab7;
+}

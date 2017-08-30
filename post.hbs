@@ -1,0 +1,39 @@
+{{!< default}} 
+<div class="container clearfix">
+    <main role="main" class="content">
+
+        {{#post}}
+        <article class="{{post_class}} post">
+            {{#is "post"}}
+                <a class="btn" href="{{@blog.url}}" title="Back to homepage">
+                    <i class="fa fa-arrow-left"></i>
+                    &nbsp;Back to home
+                </a>
+            {{/is}}
+            <h1 title="{{title}}">{{title}}</h1>
+
+            {{#is "post"}}
+                <footer class="post-info">
+                    Posted on 
+                    <span class="post-meta">
+                        <time datetime="{{date published_at format="YYYY-MM-DD"}}">
+                            {{date published_at format="Do MMMM YYYY"}}
+                        </time> 
+                        {{#foreach tags}}
+                            <a href="{{url}}">
+                                <span class="label label-primary">{{name}}</span>
+                            </a>
+                        {{/foreach}}
+                    </span>
+                </footer>
+            {{/is}}
+
+            <img src="{{img_url feature_image}}" />
+
+            {{content}}
+
+        </article>
+        {{/post}}
+
+    </main>
+</div>
