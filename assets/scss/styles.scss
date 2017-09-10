@@ -1,4 +1,5 @@
 @import "normalize/import-now";
+
 // -----------------------------------------------------------------------------
 // Variables
 // -----------------------------------------------------------------------------
@@ -6,14 +7,18 @@
 $h-color: #2a373d; // Heading Colour
 $b-color: #222222; // Body Colour
 $s-color: #979797; // Secondary Colour
+$code-bg-color: #faf8f0;
 $author-color: #fff; // Fonts
 $h-font: 'Roboto', sans-serif; // Heading Font
 $b-font: 'Noto Serif', serif; // Body Font
 $icon-font: 'fontello'; // Icon Font
+$code-font: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 
 $light: 300;
 $normal: 400;
 $bold: 700;
+
+@import "code";
 
 // -----------------------------------------------------------------------------
 // Mixin
