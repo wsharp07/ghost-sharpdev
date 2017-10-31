@@ -21,4 +21,4 @@ Builds the assets and places them in the "dist" folder
 
 #### Package
 `npm run package`
-Packages the assests into a zip file and places it in the "deploy" folder
+Packages the assets into a zip file and places it in the "deploy" folder
